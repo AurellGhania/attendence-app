@@ -22,19 +22,19 @@ class _AttendancScreenState extends State<AttendancScreen> {
   bool isLoading = false;
   double lat = 0.0, long = 0.0;
   int dateHours = 0, minute = 0;
-  final controlleer = TextEditingController();
+  final controller = TextEditingController();
   final CollectionReference dataCollection = FirebaseFirestore.instance.collection('attendance');
 
   @override
   void initState() {
-    handleLocationPermission();
-    setDataTime();
-    setAttendStatus();
+    // handleLocationPermission();
+    // setDataTime();
+    // setAttendStatus();
 
-    if (img != null) {
-      isLoading = true;
-      getgeoLocationPosittion();
-    }
+    // if (img != null) {
+    //   isLoading = true;
+    //   getgeoLocationPosittion();
+    // }
   }
 
   @override
@@ -85,10 +85,10 @@ class _AttendancScreenState extends State<AttendancScreen> {
                 child: Row(
                   children: [
                     SizedBox(width: 12,),
-                    Icon(Icons.face_retouching_natural_outlined)
+                    Icon(Icons.face_retouching_natural_outlined),
                     SizedBox(width: 12,),
                     Text(
-                      "Please Scan your face!"
+                      "Please Scan your face!",
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
@@ -136,10 +136,40 @@ class _AttendancScreenState extends State<AttendancScreen> {
                   ),
                 ),
               ),
-            ],
+              Padding(
+                padding: EdgeInsets.all(10),
+                child: TextField(
+                  textInputAction: TextInputAction.done,
+                  keyboardType: TextInputType.text,
+                  controller: controller,
+                  decoration: InputDecoration(
+                    contentPadding: EdgeInsets.symmetric(horizontal: 10),
+                    labelText: "Your Name",
+                    hintText: "Please type ur name here",
+                    hintStyle: TextStyle(
+                      fontSize: 14,
+                      color: Colors.grey
+                    ),
+                    labelStyle: TextStyle(
+                      fontSize: 14,
+                      color: Colors.blueAccent
+                      ),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(color: Colors.blueAccent)
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(color: Colors.blueAccent)
+                      )
+                ),
+              )
+            ),
+            ]
           ),
         ),
-      ),
+      )
     );
+    
   }
 }
