@@ -1,5 +1,6 @@
 import 'package:attendance_app/services/location_services.dart';
 import 'package:attendance_app/services/timestamp_service.dart';
+import 'package:attendance_app/ui/attend/components/app_bar.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 
@@ -60,6 +61,11 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    Size size = MediaQuery.of(context).size;
+
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: buildAppBar(context)
+    );
   }
 }
