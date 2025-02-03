@@ -29,7 +29,16 @@ Container buildSubmitButton(BuildContext context, Size size, XFile? image, TextE
               } else {
                 submitAttendenceReport(context, addres, controlleName.text.toString(), status, timeStamp);
               }
-            }
+            },
+            child: Text(
+              "Submit Now!",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                
+              ),
+            ),
           ),
         ),
       ),

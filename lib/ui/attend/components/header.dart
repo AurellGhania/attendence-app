@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 //dia manggil nya pake ini
-Container buildContainer() {
+Container buildHeader() {
   return Container(
     height: 50,
     decoration: BoxDecoration(
