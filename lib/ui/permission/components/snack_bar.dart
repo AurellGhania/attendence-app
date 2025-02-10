@@ -21,7 +21,10 @@ class SnackBarComponent {
             ),
           )
         ],
-      )
+      ),
+      backgroundColor: isError ? Colors.red : Colors.blueGrey,
+      shape: const StadiumBorder(),
+      behavior: SnackBarBehavior.floating,
     ));
   }
 }
