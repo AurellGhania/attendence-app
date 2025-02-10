@@ -19,7 +19,7 @@ Future<void> submitAttendenceReport(
       {
         'name': name,
         'adress': adress,
-        'attendenceStatus': attendenceStatus,
+        'description': attendenceStatus,
         'timeStamp': timeStamp,
       }
       ).then((value) {
