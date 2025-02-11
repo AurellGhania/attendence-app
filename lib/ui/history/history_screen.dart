@@ -58,9 +58,11 @@ class _AttendanceHistoryScreenState extends State<AttendanceHistoryScreen> {
                       //pemanggilannya sesuai index nya
                       documentId: data[index].id, 
                       dataCollection: dataService.dataCollection,
+                      //digunakan untuk memperbarui state setelah datanya diapus, setelah terjadi pembaruan data di db
                       onConfirm: () {
                         setState(() {
-                          dataService.dataCollection.doc(data[index].id).delete();
+                          dataService.deleteData(data[index].id);
+                          Navigator.pop(context);
                         });
                       },
                     )
