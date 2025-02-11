@@ -29,21 +29,21 @@ class HomeScreeen extends StatelessWidget {
                   context, 
                   imagePath: "/assets/images/attend.png", 
                   label: "Attendence Report", 
-                  destination: const AttendancScreen()
+                  destination: const AttendanceScreen()
                   ),
                   const SizedBox(height: 40,),
                 _buildMenuItem(
                   context, 
                   imagePath: "/assets/images/ic_permission.png", 
                   label: "Permission Report", 
-                  destination: const AttendancScreen()
+                  destination: const AttendanceScreen()
                   ),
                   const SizedBox(height: 40,),
                 _buildMenuItem(
                   context, 
                   imagePath: "/assets/images/attendence_history.png", 
                   label: "Attendence History", 
-                  destination: const AttendancScreen()
+                  destination: const AttendanceScreen()
                   ),
                   const SizedBox(height: 40,),
 
